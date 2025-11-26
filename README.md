@@ -1,8 +1,14 @@
-# React + Vite
+# Glimpse - Social Media Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beautiful, modern social media app built with React + Vite (Frontend) and Node.js + Express + MongoDB (Backend).
 
-Currently, two official plugins are available:
+## Features
+- User authentication
+- Posts, Moments, Chat
+- Real-time likes & follows
+- Beautiful UI with glassmorphism & gradients
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Setup
+1. `cd backend` → `node server.js` 
+2.  `npm run dev`
+
