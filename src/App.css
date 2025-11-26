@@ -1,0 +1,141 @@
+/* Custom Alert Modal Overlay */
+.custom-alert-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 41, 59, 0.8); /* Darker semi-transparent overlay */
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1003;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Custom Alert Content */
+.custom-alert-content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(20px);
+  text-align: center;
+  width: 350px;
+  max-width: 90%;
+  position: relative;
+  transition: all 0.3s ease;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.custom-alert-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(99, 102, 241, 0.4);
+}
+
+/* Alert Message */
+.custom-alert-content p {
+  margin: 0 0 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1e293b;
+  line-height: 1.5;
+}
+
+/* Alert Button */
+.custom-alert-content button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #26a69a, #8b5cf6, #06b6d4); /* Teal to gradient */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-alert-content button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.custom-alert-content button:hover::before {
+  left: 100%;
+}
+
+.custom-alert-content button:hover {
+  background: linear-gradient(135deg, #2c8c84, #7c3aed, #0891b2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+.custom-alert-content button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .custom-alert-content {
+    padding: 20px;
+    width: 90%;
+    border-radius: 16px;
+  }
+
+  .custom-alert-content p {
+    font-size: 14px;
+  }
+
+  .custom-alert-content button {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+/* Accessibility */
+.custom-alert-content button:focus {
+  outline: 2px solid rgba(99, 102, 241, 0.5);
+  outline-offset: 2px;
+}
+
+/* Shimmer Animation for Potential Loading */
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.custom-alert-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.05), transparent);
+  background-size: 200px 100%;
+  animation: shimmer 2s infinite;
+  opacity: 0;
+  pointer-events: none;
+}

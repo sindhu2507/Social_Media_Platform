@@ -1,0 +1,18 @@
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #c8e6c9, #bbdefb); /* Mint Green to Sky Blue */
+}
+
+.page-box {
+  background-color: #ffffff; /* White */
+  border: 2px solid #333333; /* Dark Gray */
+  border-radius: 16px;
+  padding: 40px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
